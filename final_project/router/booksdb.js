@@ -1,3 +1,6 @@
+const express = require("express")
+const regd_books = express.Router();
+
 let books = {
       1: {"author": "Chinua Achebe","title": "Things Fall Apart", "reviews": {} },
       2: {"author": "Hans Christian Andersen","title": "Fairy tales", "reviews": {} },
@@ -11,4 +14,9 @@ let books = {
       10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
 }
 
-module.exports=books;
+regd_books.get('/',(req,res)=>{
+      res.json(books);
+})
+
+module.exports = books;
+module.exports = regd_books;
